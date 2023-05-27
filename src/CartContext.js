@@ -83,12 +83,11 @@ export function CartProvider({children}) {
 
     function getTotalCost() {
         let totalCost = 0;
-        cartProducts.map((cartItem) => {
+        cartProducts.map(cartItem => {
             const productData = getProductData(cartItem.id);
             totalCost += (productData.price * cartItem.quantity);
-            return totalCost;
         });
-        
+        return totalCost;
     }
 
     const contextValue = {
